@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Faiq Zaidhan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>Portfolio.</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portfolio-section">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
+                <p>Jelajahi beberapa proyek terbaru saya</p>
+                <p>#disclaimer hanya contoh#</p>
+            </div>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                <button class="filter-btn" data-filter="app">Mobile Apps</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="images/project1.webp" alt="E-commerce Website">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>E-commerce Website</h3>
+                        <p>Web Development</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-img">
+                        <img src="images/project2.webp" alt="Mobile App UI Design">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Mobile App UI Design</h3>
+                        <p>UI/UX Design</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="images/project3.webp" alt="Blog Platform">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Blog Platform</h3>
+                        <p>Web Development</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="app">
+                    <div class="portfolio-img">
+                        <img src="images/project4.webp" alt="Fitness Tracker App">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Fitness Tracker App</h3>
+                        <p>Mobile App Development</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-img">
+                        <img src="images/project5.webp" alt="Restaurant Website Redesign">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Restaurant Website Redesign</h3>
+                        <p>UI/UX Design</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="images/project6.webp" alt="Portfolio Website">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Portfolio Website</h3>
+                        <p>Web Development</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Faiq Zaidhan. Hak cipta dilindungi undang-undang.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
