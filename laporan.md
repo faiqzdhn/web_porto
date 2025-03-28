@@ -12,7 +12,7 @@ Proyek ini merupakan implementasi website personal/portfolio menggunakan HTML da
 
 ### Fitur Utama
 1. **Navigasi Responsif**: Menu navigasi yang menyesuaikan dengan ukuran layar
-2. **Mode Gelap (Dark Mode)**: Fitur untuk mengganti tema website menjadi gelap "sesuai tema sistem perangkat" menggunakan CSS (tanpa JavaScript)
+2. **Mode Gelap (Dark Mode)**: Fitur untuk mengganti tema website menjadi gelap menggunakan CSS (tanpa JavaScript)
 3. **Halaman Beranda**: Menampilkan informasi utama dan foto profil
 4. **Halaman Tentang**: Berisi informasi detail tentang diri
 5. **Halaman Keahlian**: Menampilkan keahlian dengan visualisasi progress bar
@@ -100,15 +100,60 @@ Dark mode diimplementasikan menggunakan kombinasi dari:
 @media (prefers-color-scheme: dark) {
     :root {
         /* Variabel dark mode */
+        --primary-color: #6c5ce7;
+        --secondary-color: #a29bfe;
+        --text-color: #f5f5f5;
+        --light-text: #fff;
+        --background-color: #121212;
+        --card-bg: #1e1e1e;
+        --border-color: #333;
+        --hover-color: #8075e5;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 }
 ```
 
 2. **Checkbox Tersembunyi** untuk toggle manual:
 ```css
+/* Implementasi awal (yang bermasalah) */
+/* 
 #theme-toggle:checked ~ * {
     --background-color: #121212;
-    /* Variabel dark mode lainnya */
+    --Variabel dark mode lainnya
+}
+*/
+
+/* Implementasi yang diperbaiki */
+#theme-toggle:checked ~ header,
+#theme-toggle:checked ~ main,
+#theme-toggle:checked ~ footer {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --text-color: #f5f5f5;
+    --light-text: #fff;
+    --background-color: #121212;
+    --card-bg: #1e1e1e;
+    --border-color: #333;
+    --hover-color: #8075e5;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Atur background secara langsung pada elemen-elemen utama */
+#theme-toggle:checked ~ header {
+    background-color: #121212;
+}
+
+#theme-toggle:checked ~ main {
+    background-color: #121212;
+}
+
+#theme-toggle:checked ~ footer {
+    background-color: #121212;
+}
+
+/* Style dark mode untuk elemen body secara langsung */
+#theme-toggle:checked ~ * {
+    color: #f5f5f5;
 }
 ```
 
@@ -117,7 +162,7 @@ Filter portfolio yang interaktif diimplementasikan menggunakan:
 1. **Radio Button Tersembunyi** untuk pilihan filter
 2. **CSS Selectors** untuk menyembunyikan item yang tidak sesuai kategori:
 ```css
-#filter-web:checked ~ .portfolio-grid .portfolio-item:not([data-category="web"]) {
+#filter-web:checked ~ .portfolio-grid .portfolio-item:not([data-category="panitia"]) {
     display: none;
 }
 ```
@@ -148,6 +193,7 @@ Dalam pembuatan proyek ini, beberapa hal yang dipelajari:
 6. Optimasi pengalaman pengguna dengan animasi CSS
 7. Pembuatan website interaktif tanpa menggunakan JavaScript
 8. Penggunaan CSS secara kreatif untuk menggantikan fungsionalitas yang biasanya memerlukan JavaScript
+9. Pemahaman mendalam tentang CSS selectors dan inheritance untuk implementasi fitur interaktif
 
 ## Tantangan dan Solusi
 
@@ -157,7 +203,11 @@ Beberapa tantangan dalam pengembangan proyek ini:
    - Solusi: Penggunaan media queries dan layout flexbox/grid
    
 2. **Dark Mode Tanpa JavaScript**: Implementasi toggle tema tanpa menggunakan script
-   - Solusi: Menggunakan checkbox tersembunyi, CSS selectors, dan variabel CSS
+   - Tantangan Awal: Selector CSS `#theme-toggle:checked ~ *` tidak berfungsi dengan efektif untuk mengubah background dan mewarisi variabel ke semua elemen
+   - Solusi: 
+     1. Menggunakan selector yang lebih spesifik untuk menargetkan elemen utama (`#theme-toggle:checked ~ header, #theme-toggle:checked ~ main, #theme-toggle:checked ~ footer`)
+     2. Menerapkan background color secara langsung pada elemen utama
+     3. Menggunakan selector terpisah untuk mengatur warna teks
 
 3. **Portfolio Filter Tanpa JavaScript**: Membuat filter kategori yang berfungsi dengan CSS saja
    - Solusi: Implementasi dengan radio button tersembunyi dan CSS selectors lanjutan
@@ -175,6 +225,16 @@ Untuk pengembangan selanjutnya, beberapa hal yang dapat ditambahkan:
 4. Penggunaan CSS preprocessor seperti SASS untuk pengelolaan style yang lebih terstruktur
 5. Implementasi CSS Houdini untuk efek visual yang lebih canggih
 6. Penggunaan sistem CSS Grid yang lebih kompleks untuk layout yang lebih dinamis
+7. Penyempurnaan lebih lanjut pada implementasi dark mode untuk kasus edge case
+
+## Pelajaran Penting dari Implementasi Dark Mode
+
+Dari proses perbaikan fitur dark mode, beberapa pelajaran penting yang didapat:
+
+1. **Pemahaman CSS Inheritance**: Beberapa properti CSS seperti `background-color` tidak diwariskan (inherited) secara otomatis dari parent ke child elements, sehingga perlu diterapkan secara eksplisit
+2. **Keterbatasan CSS Selectors**: Selectors seperti `~` (general sibling combinator) memiliki keterbatasan dalam menargetkan elemen berdasarkan struktur DOM
+3. **Spesifisitas vs Generalitas**: Pendekatan yang lebih spesifik sering kali lebih efektif daripada pendekatan yang lebih umum ketika implementasi fitur interaktif
+4. **CSS Variables**: Sangat berguna untuk tema dinamis, tetapi perlu dipahami bagaimana mereka bekerja bersama dengan inheritance
 
 ## Link Website setelah Hosting
 
