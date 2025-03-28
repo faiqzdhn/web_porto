@@ -56,8 +56,10 @@
     content: '\f185'; /* Unicode untuk fa-sun */
 }
 
-/* Switch tema saat checkbox di-check */
-#theme-toggle:checked ~ * {
+/* Terapkan tema gelap saat checkbox di-check */
+#theme-toggle:checked ~ header,
+#theme-toggle:checked ~ main,
+#theme-toggle:checked ~ footer {
     --primary-color: #6c5ce7;
     --secondary-color: #a29bfe;
     --text-color: #f5f5f5;
@@ -67,6 +69,24 @@
     --border-color: #333;
     --hover-color: #8075e5;
     --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Atur background secara langsung pada elemen-elemen utama */
+#theme-toggle:checked ~ header {
+    background-color: #121212;
+}
+
+#theme-toggle:checked ~ main {
+    background-color: #121212;
+}
+
+#theme-toggle:checked ~ footer {
+    background-color: #121212;
+}
+
+/* style dark mode untuk elemen body secara langsung */
+#theme-toggle:checked ~ * {
+    color: #f5f5f5;
 }
 
 * {
