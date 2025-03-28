@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- checkbox tersembunyi untuk toggle dark mode -->
+    <input type="checkbox" id="theme-toggle">
+    
     <header>
         <div class="logo">
             <h2>Portfolio.</h2>
@@ -20,7 +23,7 @@
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+                <li><label for="theme-toggle" class="theme-switch"></label></li>
             </ul>
         </nav>
     </header>
@@ -45,17 +48,9 @@
                 </div>
                 
                 <div class="hero-image-container">
-                    <!-- <div class="hero-decoration">
-                        <div class="code-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        
-                    </div>
-                    <div class="hero-image"> -->
-                        <div class="circle-decoration"></div>
-                        <div class="profile-circle">
-                            <img src="images/profile.jpg" alt="Faiq Zaidhan">
-                        </div>
+                    <div class="circle-decoration"></div>
+                    <div class="profile-circle">
+                        <img src="images/profile.jpg" alt="Faiq Zaidhan">
                     </div>
                 </div>
             </div>
@@ -65,7 +60,5 @@
     <footer>
         <p>&copy; 2025 Faiq Zaidhan. Hak cipta dilindungi undang-undang.</p>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
