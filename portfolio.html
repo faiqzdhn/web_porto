@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- checkbox tersembunyi untuk toggle dark mode -->
+    <input type="checkbox" id="theme-toggle">
+    
     <header>
         <div class="logo">
             <h2>Portfolio.</h2>
@@ -20,7 +23,7 @@
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="portfolio.html" class="active">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+                <li><label for="theme-toggle" class="theme-switch"></label></li>
             </ul>
         </nav>
     </header>
@@ -29,80 +32,85 @@
         <section class="portfolio-section">
             <div class="section-title">
                 <h2>My Portfolio</h2>
-                <p>Jelajahi beberapa proyek terbaru saya</p>
-                <p>#disclaimer hanya contoh#</p>
+                <p>Jelajahi beberapa pengalaman saya</p>
             </div>
             
+            <!-- radio button tersembunyi untuk filter portfolio dengan CSS -->
+            <input type="radio" name="portfolio-filter" id="filter-semua" checked>
+            <input type="radio" name="portfolio-filter" id="filter-panitia">
+            <input type="radio" name="portfolio-filter" id="filter-peserta">
+            <input type="radio" name="portfolio-filter" id="filter-non">
+            
             <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="design">UI/UX Design</button>
-                <button class="filter-btn" data-filter="app">Mobile Apps</button>
+                <label for="filter-semua" class="filter-label filter-semua">SEMUA</label>
+                <label for="filter-panitia" class="filter-label filter-panitia">PANITIA</label>
+                <label for="filter-peserta" class="filter-label filter-peserta">PESERTA</label>
+                <label for="filter-non" class="filter-label filter-non">NON-FAKULTAS</label>
             </div>
             
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="web">
+                <div class="portfolio-item" data-category="panitia">
                     <div class="portfolio-img">
-                        <img src="images/project1.webp" alt="E-commerce Website">
+                        <img src="images/sertif1.png" alt="sertif1">
                     </div>
                     <div class="portfolio-info">
-                        <h3>E-commerce Website</h3>
-                        <p>Web Development</p>
+                        <h3>Sertifikat Fakultaria 2024</h3>
+                        <p>Panitia</p>
                         <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="design">
+                <div class="portfolio-item" data-category="panitia">
                     <div class="portfolio-img">
-                        <img src="images/project2.webp" alt="Mobile App UI Design">
+                        <img src="images/sertif2.png" alt="sertif2">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Mobile App UI Design</h3>
-                        <p>UI/UX Design</p>
+                        <h3>Sertifikat KAMA FKI 2025</h3>
+                        <p>Panitia</p>
                         <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="web">
+                <div class="portfolio-item" data-category="panitia">
                     <div class="portfolio-img">
-                        <img src="images/project3.webp" alt="Blog Platform">
+                        <img src="images/sertif3.png" alt="sertif3">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Blog Platform</h3>
-                        <p>Web Development</p>
+                        <h3>Sertifikat BEM FKI 2025</h3>
+                        <p>Panitia</p>
                         <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="app">
+                <div class="portfolio-item" data-category="peserta">
                     <div class="portfolio-img">
-                        <img src="images/project4.webp" alt="Fitness Tracker App">
+                        <img src="images/sertif4.jpg" alt="sertif4">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Fitness Tracker App</h3>
-                        <p>Mobile App Development</p>
+                        <h3>Sertifikat Fakultaria 2023</h3>
+                        <p>Peserta</p>
                         <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="design">
+                <div class="portfolio-item" data-category="peserta">
                     <div class="portfolio-img">
-                        <img src="images/project5.webp" alt="Restaurant Website Redesign">
+                        <img src="images/sertif5.png" alt="sertif5">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Restaurant Website Redesign</h3>
-                        <p>UI/UX Design</p>
+                        <h3>Sertifikat EXPO UKM 2023</h3>
+                        <p>Peserta</p>
                         <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="web">
+                <div class="portfolio-item" data-category="non">
                     <div class="portfolio-img">
-                        <img src="images/project6.webp" alt="Portfolio Website">
+                        <img src="images/sertif6.png" alt="sertif6">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Portfolio Website</h3>
-                        <p>Web Development</p>
+                        <h3>Sertifikat Library Orientation</h3>
+                        <p>Peserta</p>
                         <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                     </div>
                 </div>
@@ -113,7 +121,5 @@
     <footer>
         <p>&copy; 2025 Faiq Zaidhan. Hak cipta dilindungi undang-undang.</p>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
