@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- checkbox tersembunyi untuk toggle dark mode -->
+    <input type="checkbox" id="theme-toggle">
+
     <header>
         <div class="logo">
             <h2>Portfolio.</h2>
@@ -20,7 +23,7 @@
                 <li><a href="skills.html" class="active">Skills</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+                <li><label for="theme-toggle" class="theme-switch"></label></li>
             </ul>
         </nav>
     </header>
@@ -42,9 +45,9 @@
                             </div>
                             <h4>HTML5</h4>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 53%;"></div>
+                                <div class="skill-progress" style="width: 60%;"></div>
                             </div>
-                            <span class="skill-percentage">53%</span>
+                            <span class="skill-percentage">60%</span>
                         </div>
                         
                         <div class="skill-card">
@@ -53,21 +56,10 @@
                             </div>
                             <h4>CSS3</h4>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 50%;"></div>
-                            </div>
-                            <span class="skill-percentage">50%</span>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fab fa-js"></i>
-                            </div>
-                            <h4>JavaScript</h4>
-                            <div class="skill-bar">
                                 <div class="skill-progress" style="width: 45%;"></div>
                             </div>
                             <span class="skill-percentage">45%</span>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 
